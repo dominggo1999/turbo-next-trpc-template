@@ -16,25 +16,25 @@ export const Default = () => {
       <Sidebar setOpen={setOpen} open={open}>
         <SidebarLink
           icon={<AiFillCamera />}
-          to="https://www.google.com/"
+          href="https://www.google.com/"
           onClick={close}
-          target="_blank"
+          isActive={false}
         >
           Dashboard
         </SidebarLink>
         <SidebarLink
           icon={<AiFillFacebook />}
-          to="https://www.google.com/"
+          href="https://www.google.com/"
           onClick={close}
-          target="_blank"
+          isActive={false}
         >
           Products
         </SidebarLink>
         <SidebarLink
           icon={<AiFillCompass />}
-          to="https://www.google.com/"
+          href="https://www.google.com/"
           onClick={close}
-          target="_blank"
+          isActive={false}
         >
           Cart
         </SidebarLink>
