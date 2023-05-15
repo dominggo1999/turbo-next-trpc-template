@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = () => {
   const handleClick = () => {
-    console.log("Test");
+    console.log("Hello world");
   };
 
   return <button onClick={handleClick}>test</button>;
