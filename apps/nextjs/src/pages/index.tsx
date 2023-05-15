@@ -5,7 +5,7 @@ const Home = () => {
   const formItem = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState("Hello");
 
-  const { isLoading, data, error } = api.hello.hello.useQuery(
+  const { isLoading, data, error } = api.hello.sayHello.useQuery(
     {
       name: value,
     },

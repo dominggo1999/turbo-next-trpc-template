@@ -1,6 +1,7 @@
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
+import { generateOpenApiDocument } from "trpc-openapi";
 
-import { type AppRouter } from "./src/root";
+import { appRouter, type AppRouter } from "./src/root";
 
 export { appRouter, type AppRouter } from "./src/root";
 export { createTRPCContext } from "./src/trpc";
@@ -16,3 +17,12 @@ export type RouterInputs = inferRouterInputs<AppRouter>;
  * @example type HelloOutput = RouterOutputs['example']['hello']
  **/
 export type RouterOutputs = inferRouterOutputs<AppRouter>;
+
+// Generate OpenAPI schema document
+export const openApiDocument = generateOpenApiDocument(appRouter, {
+  title: "Example API",
+  description: "OpenAPI compliant REST API built using tRPC with Express",
+  version: "1.0.0",
+  baseUrl: "http://localhost:4000/api",
+  docsUrl: "https://github.com/jlalmes/trpc-openapi",
+});
